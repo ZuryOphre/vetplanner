@@ -2,12 +2,12 @@ import Link from 'next/link';
 
 const Header = () => {
   return (
-    <nav className="flex items-center justify-between flex-wrap bg-teal-500 p-6">
-      <div className="logo-container flex items-center flex-shrink-0 text-white mr-6">
-        <img src="/VetPlanner.png" alt="Logo" className="w-12 h-12 mr-2" />
+    <nav className="sticky top-0 flex items-center justify-between bg-teal-500 p-3">
+      <div className="logo-container flex items-center text-white mr-6">
+        <img src="/VetPlanner.png" alt="Logo" className="w-12 h-12 mr-2"/>
         <span className="font-semibold text-xl tracking-tight">VetPlanner</span>
       </div>
-      <div className="links-container flex-grow">
+      <div className="links-container">
         <ul className="flex justify-end">
           <li className="mr-4">
             <Link legacyBehavior href="/register">
@@ -15,7 +15,7 @@ const Header = () => {
             </Link>
           </li>
           <li className="mr-4">
-            <Link legacyBehavior href="/buscar">
+            <Link legacyBehavior href="/search">
               <a className="text-white hover:text-gray-200">Buscar Paciente</a>
             </Link>
           </li>
