@@ -10,7 +10,7 @@ const Header = () => {
       <div className="links-container flex-grow">
         <ul className="flex justify-end">
           <li className="mr-4">
-            <Link legacyBehavior href="/registrar">
+            <Link legacyBehavior href="/register">
               <a className="text-white hover:text-gray-200">Registrar Paciente</a>
             </Link>
           </li>
