@@ -61,7 +61,7 @@ export default function SearchPage() {
                         <p>Edad mascota: {pet.age}</p>
                         <p>Diagnostico: {pet.diagnosis}</p>
                         <p>Observaciones: {pet.instructions}</p>
-                        <p>Fecha ingreso: {pet.admission}</p>
+                        <p>Fecha ingreso: {new Date(pet.admission).toLocaleDateString('es-AR')}</p>
                       </li>
                     ))}
                   </ul>
