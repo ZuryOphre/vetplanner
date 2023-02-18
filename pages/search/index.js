@@ -44,7 +44,7 @@ export default function SearchPage() {
 
       {searchResults.length > 0 && (
         <div className="max-w-xs mx-auto">
-        <div className="winglass inline-block p-4">
+        <div className="bg-gray-100 rounded-md inline-block p-4">
           <h2 className="font-bold mb-4">Resultado de la Busqueda:</h2>
           <ul className="list-none">
             {searchResults.map((result) => (
