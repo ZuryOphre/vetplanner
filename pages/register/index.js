@@ -69,7 +69,7 @@ const Register = () => {
             setPetData({
               name: "",
               age: "",
-              diagnosis: "",
+              observations: "",
               instructions: "",
               admission: "",
               ownerId: "",
@@ -154,36 +154,12 @@ const Register = () => {
             </div>
             <div className="px-6 py-4">
               <label className="block text-gray-700 font-bold mb-2">
-                Edad:
-              </label>
-              <input
-                type="number"
-                name="age"
-                value={petData.age}
-                onChange={handlePetChange}
-                className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              />
-            </div>
-            <div className="px-6 py-4">
-              <label className="block text-gray-700 font-bold mb-2">
-                Diagnostico:
-              </label>
-              <input
-                type="text"
-                name="diagnosis"
-                value={petData.diagnosis}
-                onChange={handlePetChange}
-                className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              />
-            </div>
-            <div className="px-6 py-4">
-              <label className="block text-gray-700 font-bold mb-2">
                 Observaciones:
               </label>
               <input
                 type="text"
                 name="instructions"
-                value={petData.instructions}
+                value={petData.observations}
                 onChange={handlePetChange}
                 className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               />
