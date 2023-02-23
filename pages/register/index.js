@@ -13,9 +13,7 @@ const Register = () => {
 
   const [petData, setPetData] = useState({
     name: "",
-    age: "",
-    diagnosis: "",
-    instructions: "",
+    observations: "",
     admission: "",
     ownerId: "",
   });
@@ -70,7 +68,6 @@ const Register = () => {
               name: "",
               age: "",
               observations: "",
-              instructions: "",
               admission: "",
               ownerId: "",
             });
@@ -158,7 +155,7 @@ const Register = () => {
               </label>
               <input
                 type="text"
-                name="instructions"
+                name="observations"
                 value={petData.observations}
                 onChange={handlePetChange}
                 className="border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
