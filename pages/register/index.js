@@ -1,6 +1,7 @@
 import Header from "../../components/header/index";
 import Footer from "../../components/footer/index";
 import { useState } from "react";
+import Modal from "../../components/modal";
 
 const Register = () => {
   const [ownerData, setOwnerData] = useState({
@@ -19,7 +20,18 @@ const Register = () => {
     ownerId: "",
   });
 
-  const [successMessage, setSuccessMessage] = useState(null); // Add success message state
+  const [successMessage, setSuccessMessage] = useState(""); // Add success message state
+  const [showModal, setShowModal] = useState(false);
+
+  const handleSuccess = () => {
+    setSuccessMessage("¡Registro exitoso!");
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
 
   const handleOwnerChange = (event) => {
     const { name, value } = event.target;
@@ -33,7 +45,7 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
+  
     // First, create the owner
     fetch("/api/owners", {
       method: "POST",
@@ -62,12 +74,14 @@ const Register = () => {
               admission: "",
               ownerId: "",
             });
-            setSuccessMessage("Form saved successfully."); // Set success message
+            setSuccessMessage("registro exitoso!"); // Set success message
+            setShowModal(true); // Set showModal to true after success message is set
           })
           .catch((error) => console.error(error));
       })
       .catch((error) => console.error(error));
   };
+  
 
   return (
     <div className="bg-gray-100">
@@ -195,6 +209,10 @@ const Register = () => {
               </button>
             </div>
           </form>
+          {showModal && (
+            <Modal message={successMessage} onClose={handleCloseModal} successMessage={successMessage} />
+
+          )}
         </div>
       </div>
       <Footer />
