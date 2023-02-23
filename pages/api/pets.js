@@ -31,16 +31,12 @@ export default async function handler(req, res) {
       }
       break;
     case 'POST':
-      const { name, age, diagnosis, instructions, observations, admission, discharge, ownerId } = body;
+      const { name, observations, admission, ownerId } = body;
       const newPet = await prisma.pet.create({
         data: {
           name,
-          age: Number(age),
-          diagnosis,
-          instructions,
           observations, 
           admission: new Date(admission),
-          discharge: new Date(discharge),
           ownerId: Number(ownerId)
         },
         include: {
