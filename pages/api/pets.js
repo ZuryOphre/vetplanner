@@ -31,14 +31,16 @@ export default async function handler(req, res) {
       }
       break;
     case 'POST':
-      const { name, age, diagnosis, instructions, admission, ownerId } = body;
+      const { name, age, diagnosis, instructions, observations, admission, discharge, ownerId } = body;
       const newPet = await prisma.pet.create({
         data: {
           name,
           age: Number(age),
           diagnosis,
           instructions,
+          observations, 
           admission: new Date(admission),
+          discharge: new Date(discharge),
           ownerId: Number(ownerId)
         },
         include: {
@@ -54,7 +56,7 @@ export default async function handler(req, res) {
         }
       });
       if (petToUpdate) {
-        const { name, age, diagnosis, instructions, admission, discharge, ownerId } = body;
+        const { name, age, diagnosis, instructions, observations, admission, discharge, ownerId } = body;
         const updatedPet = await prisma.pet.update({
           where: {
             id: Number(id)
@@ -64,6 +66,7 @@ export default async function handler(req, res) {
             age: age ? Number(age) : petToUpdate.age,
             diagnosis: diagnosis || petToUpdate.diagnosis,
             instructions: instructions || petToUpdate.instructions,
+            observations: observations || petToUpdate.observations,
             admission: admission ? new Date(admission) : petToUpdate.admission,
             discharge: discharge ? new Date(discharge) : petToUpdate.discharge,
             ownerId: ownerId ? Number(ownerId) : petToUpdate.ownerId
