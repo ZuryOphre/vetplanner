@@ -19,10 +19,10 @@ model Owner {
 model Pet {
   id          Int      @id @default(autoincrement())
   name        String
-  age         Int
-  diagnosis   String
-  instructions String
-  observations String?
+  age         Int?
+  diagnosis   String?
+  instructions String?
+  observations String
   admission   DateTime
   discharge   DateTime?
   ownerId     Int
