@@ -22,8 +22,18 @@ model Pet {
   age         Int
   diagnosis   String
   instructions String
+  observations String?
   admission   DateTime
   discharge   DateTime?
   ownerId     Int
   owner       Owner    @relation(fields: [ownerId], references: [id])
+  appointments  Appointment[]
+}
+
+model Appointment {
+  id           Int      @id @default(autoincrement())
+  date         DateTime
+  veterinarian String
+  petId        Int
+  pet          Pet      @relation(fields: [petId], references: [id])
 }
