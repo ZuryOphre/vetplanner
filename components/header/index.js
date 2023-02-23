@@ -23,22 +23,22 @@ const Header = () => {
         <ul className="flex justify-end">
           <li className="mr-4">
             <Link href="/register" legacyBehavior>
-              <a className="text-white hover:text-gray-200">Registrar Paciente</a>
+              <a className="text-white hover:text-gray-200">Registro Paciente</a>
+            </Link>
+          </li>
+          <li className="mr-4">
+            <Link href="/" legacyBehavior>
+              <a className="text-white hover:text-gray-200">Citas Veterinarias</a>
+            </Link>
+          </li>
+          <li className="mr-4">
+            <Link href="/" legacyBehavior>
+              <a className="text-white hover:text-gray-200">Registro Medico</a>
             </Link>
           </li>
           <li className="mr-4">
             <Link href="/search" legacyBehavior>
               <a className="text-white hover:text-gray-200">Buscar Paciente</a>
-            </Link>
-          </li>
-          <li className="mr-4">
-            <Link href="/actualizar" legacyBehavior>
-              <a className="text-white hover:text-gray-200">Actualizar Datos</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/eliminar" legacyBehavior>
-              <a className="text-white hover:text-gray-200">Eliminar Datos</a>
             </Link>
           </li>
         </ul>
